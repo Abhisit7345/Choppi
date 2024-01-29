@@ -1,0 +1,24 @@
+:root {
+  font-size: 20px;
+}
+
+.content {
+  margin-left: 8rem;
+}
+
+.nav {
+  position: fixed;
+  z-index: 100;
+}
+
+body::-webkit-scrollbar{
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track{
+  background: red;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: purple;
+}

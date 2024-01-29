@@ -1,0 +1,36 @@
+.display-search {
+    box-shadow: 0px 3px 3px 3px rgb(117, 117, 117);
+    padding: 20px;
+    display: flex;
+    margin-left: 55px;
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    background-color: white;
+}
+
+.display-search:hover {
+    background-color: rgb(185, 185, 185);
+}
+
+.search-items {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.display-item {
+    width: 100%;
+    
+}
+
+.product-item {
+    background-color: rgb(209, 209, 209);
+    width: 8rem;
+    height: 10rem;
+    margin-top: 5px;
+}
+
+.product-item:hover {
+    margin-top: 10px;
+}

@@ -1,0 +1,37 @@
+.other-info {
+    border : solid 5px black;
+    height: 100px;
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.submit-button {
+    margin-top: 10px;
+}
+
+.chatbox-left {
+    position: relative;
+}
+
+.chatbox-left:before {
+    content:"";
+    position:absolute;
+    border: 7px solid;
+    border-color: transparent #000000 transparent transparent;
+    left:-16px;
+    bottom: -3px;
+}
+
+.chatbox-right {
+    position: relative;
+}
+
+.chatbox-right:before {
+    content:"";
+    position:absolute;
+    border: 7px solid;
+    border-color: transparent #000000 transparent transparent;
+    left:-16px;
+    bottom: -3px;
+}

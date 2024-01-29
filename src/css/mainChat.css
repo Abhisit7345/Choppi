@@ -1,0 +1,12 @@
+.text-number {
+    border-radius: 50%;
+    background-color: rgb(0, 180, 0);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.chat-item {
+    border: grey 1px solid;
+    height: 100px;
+}

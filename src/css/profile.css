@@ -1,0 +1,7 @@
+#profile_button:hover {
+    background-color: aqua !important
+}
+
+#profile_button {
+    transition: 300ms;
+}

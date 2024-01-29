@@ -1,0 +1,57 @@
+.addImage {
+  width: 500px;
+  height: 200px;
+  border: rgba(0, 0, 0, 0.3) 1px solid;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.confirmImage {
+  width: 500px;
+  height: 200px;
+}
+
+.form-fill {
+    margin-top: 100px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contain {
+  position: relative;
+}
+
+.picture {
+  height: 200px;
+  border: rgb(111, 223, 126) 1px solid;
+  border-radius: 10px;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+}
+
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 700px;
+  height: 200px;
+  border: rgb(0, 223, 0) 1px solid;
+  background-color: rgb(119, 233, 119);
+  transition: 300ms;
+}

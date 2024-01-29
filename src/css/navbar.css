@@ -1,0 +1,106 @@
+:root {
+  font-size: 20px;
+}
+
+.navbar {
+  width: 8rem;
+  background-color: aqua;
+  height: 100vh;
+  position: fixed;
+  transition: 200ms width ease;
+  z-index: 100;
+}
+
+.navbar:hover {
+  width: 16rem;
+}
+
+.navbar:hover .nav-text {
+  display: block;
+}
+
+.navbar-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  height: 100%;
+}
+
+.logo {
+  width: 7rem;
+}
+
+li:last-child {
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+li:first-child {
+  margin-bottom: 70px;
+  margin-left: 0;
+}
+
+li {
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  filter: grayscale(100%) opacity(0.7);
+  transition: 300ms;
+  align-items: center;
+  text-align: center;
+}
+
+.li-item:hover {
+  filter: greyscale(0%) opacity(1);
+  background-color: blue;
+  color: blueviolet;
+}
+
+.nav-icon {
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-text {
+  display: none;
+  width: 8rem;
+}
+
+.nav-text:hover {
+  cursor: default;
+}
+
+.materials-icons:hover {
+  cursor: default;
+}
+
+.chat {
+  display: flex;
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  right: 30px;
+  border: 5px black solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  z-index: 1;
+  color: white;
+}
+
+.chat-icon {
+  font-size: 20px;
+}
