@@ -12,6 +12,8 @@ import { useAuth } from "./contexts/AuthContext.jsx";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import { Card } from "react-bootstrap";
 
 export default function CategoryItems() {
@@ -32,8 +34,9 @@ export default function CategoryItems() {
       querySnapshot.forEach((doc) => {
         setItemList((prev) => {
           const new_prev = [...prev];
-          new_prev.push(doc.data());
-          addName(doc.data().uid)
+          const newData = { ...doc.data(), itemId: doc.id }
+          new_prev.push(newData);
+          addName(doc.data().uid);
           return new_prev;
         });
       });
@@ -41,11 +44,8 @@ export default function CategoryItems() {
     fetchData();
   }, []);
 
-  async function addName(uid){
-    const q = query(
-      collection(db, "users"),
-      where("uid", "==", uid)
-    );
+  async function addName(uid) {
+    const q = query(collection(db, "users"), where("uid", "==", uid));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       setNameList((prev) => {
@@ -73,40 +73,61 @@ export default function CategoryItems() {
         className="d-flex flex-column align-items-between"
         style={{ minHeight: "100vh" }}
       >
-        <div className="content flex-grow-1">
+        <div
+          className="content flex-grow-1"
+          style={{ margin: "50px 9rem 50px 9rem " }}
+        >
           {displayItem ? (
-            <div>
-              {console.log(itemList)}
+            <div className="row">
               {displayItem.map((item, index) => (
-                <div><Card
-                style={{ width: "12rem", height: "20rem" }}
-                key={item.docId}
-              >
-                <Card.Img
-                  src={item.pictureUrl}
-                  style={{
-                    height: "10rem",
-                    objectFit: "cover",
-                  }}
-                />
-                <Card.Body>
-                  <Card.Title>{item.name}</Card.Title>
-                  <Card.Text
-                    style={{
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      height: "4rem",
-                      whiteSpace: "nowrap",
-                      border : "red 1px solid",
+                <div className="col-md-3" style={{ marginBottom: "20px" }}>
+                  <Link
+                    to={{
+                      pathname: "/itemInfo",
+                      search: `itemId=${item.itemId}`,
                     }}
+                    style={{ textDecoration: "none", color: "black" }}
                   >
-                    {item.description} fdsfasfsdfasf
-                  </Card.Text>
-                  <Card.Text style={{ overflow : 'hidden',textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontSize: '15px' }}>
-                    posted by { nameList[index] }
-                  </Card.Text>
-                </Card.Body>
-              </Card></div>
+                    <Card
+                      style={{ width: "12rem", height: "20rem" }}
+                      key={item.docId}
+                    >
+                      <Card.Img
+                        src={item.pictureUrl}
+                        style={{
+                          height: "10rem",
+                          objectFit: "cover",
+                        }}
+                      />
+                      <Card.Body>
+                        <Card.Title>{item.name}</Card.Title>
+                        <Card.Text
+                          style={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            height: "3rem",
+                            whiteSpace: "nowrap",
+                            backgroundColor: "rgb(177, 177, 177)",
+                            borderRadius: "5px",
+                            padding: "10px",
+                          }}
+                        >
+                          {item.description} fdsfasfsdfasf
+                        </Card.Text>
+                        <Card.Text
+                          style={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            whiteSpace: "nowrap",
+                            fontSize: "15px",
+                          }}
+                        >
+                          posted by {nameList[index]}
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </div>
               ))}
             </div>
           ) : (
@@ -120,4 +141,3 @@ export default function CategoryItems() {
     </div>
   );
 }
-
