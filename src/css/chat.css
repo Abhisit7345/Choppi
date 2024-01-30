@@ -31,7 +31,7 @@
     content:"";
     position:absolute;
     border: 7px solid;
-    border-color: transparent #000000 transparent transparent;
-    left:-16px;
+    border-color: transparent #000000 transparent;
+    right:-16px;
     bottom: -3px;
 }

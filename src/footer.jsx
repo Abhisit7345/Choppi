@@ -25,8 +25,8 @@ export default function Footer({ onUpdateContent }) {
 
   return (
     <div className="footer-item">
-      <div className="d-flex justify-content-between footer-content">
-        <div>
+      <div className="row footer-content">
+        <div className="col-6 d-flex flex-column align-items-center">
           <b>Products</b>
           <Link
             to={{
@@ -78,7 +78,7 @@ export default function Footer({ onUpdateContent }) {
             <div>Other</div>
           </Link>
         </div>
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column col-md-12 col-xxl-6 align-items-center">
           <a
             href="https://linkedin.com/in/abhisit-anupapphan-32879b23a"
             target="_blank"

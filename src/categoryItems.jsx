@@ -92,7 +92,7 @@ export default function CategoryItems() {
       >
         <div
           className="content flex-grow-1"
-          style={{ margin: "50px 20rem"}}
+          style={{ margin: "50px 20rem", width: '70%'}}
         >
           {displayItem ? (
             <div
@@ -105,7 +105,7 @@ export default function CategoryItems() {
               }}
             >
               {displayItem.map((item, index) => (
-                <div className="col-md-3" style={{ marginBottom: "20px" }}>
+                <div className="col-md-12 col-lg-6 col-xl-4 col-xxl-3" style={{ marginBottom: "20px" }}>
                   <Card
                     style={{ width: "12rem", height: "20rem" }}
                     key={item.docId}

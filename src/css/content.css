@@ -15,10 +15,3 @@ body::-webkit-scrollbar{
   width: 0.25rem;
 }
 
-body::-webkit-scrollbar-track{
-  background: red;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: purple;
-}

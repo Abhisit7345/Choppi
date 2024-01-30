@@ -32,15 +32,15 @@ export default function ItemInfo() {
         <div style={{ height: "1px" }}></div>
         <div className="main-item">
           {itemInfo ? (
-            <div className="row align-items-center">
-              <div className="d-flex flex-column align-items-center col-6">
+            <div className="row">
+              <div className="col-md-12 col-xl-6">
                 <img
                   src={itemInfo.pictureUrl}
-                  style={{ height: '200px', width: '200px' }}
+                  style= {{ width: '100%'}}
                   alt=""
                 />
               </div>
-              <div className="d-flex flex-column align-items-center col-6">
+              <div className="col-md-12 col-xl-6">
                 <h2>{itemInfo.name}</h2>
                 <p>{itemInfo.description}</p>
                 <div>$ {itemInfo.price}</div>

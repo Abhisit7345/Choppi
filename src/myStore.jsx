@@ -48,7 +48,8 @@ export default function MyStore() {
         <Navbar />
       </div>
       <div className="content">
-        <Row sm={12} lg={12}>
+        <div style={{ height: '1px' }}></div>
+        <div className="row" style={{ marginTop : '20px', padding : '20px' }}>
           {curItem.length > 0 ? (
             curItem
               .filter(
@@ -56,9 +57,8 @@ export default function MyStore() {
                   index === self.findIndex((t) => t.id === item.id)
               )
               .map((item) => {
-                console.log(item);
                 return (
-                  <div>
+                  <div className="col-md-12 col-lg-6 col-xl-4 col-xxl-3" style={{ marginBottom : '20px' }}>
                     <Card
                       style={{ width: "12rem", height: "20rem" }}
                       key={item.docId}
@@ -91,10 +91,10 @@ export default function MyStore() {
           ) : (
             <div>you do not have any items!</div>
           )}
-        </Row>
-        <div>
+        </div>
+        <div style={{ padding : '20px' }}>
           <Link to="/sellitem">
-            <button>start listing</button>
+            <Button variant="primary">List item</Button>
           </Link>
         </div>
       </div>

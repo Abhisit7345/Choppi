@@ -120,7 +120,7 @@ export default function Chat() {
             className="content d-flex flex-column"
             style={{ minHeight: "100vh" }}
           >
-            <div className="flex-grow-1" style={{ margin: "10px" }}>
+            <div className="flex-grow-1" style={{ margin: "10px"}}>
               <div className="d-flex other-info">
                 {otherInfo ? (
                   <>
@@ -158,8 +158,8 @@ export default function Chat() {
                       </div>
                     ) : (
                       <div
-                        style={{ height: "50px", marginTop: "2px" }}
-                        className="d-flex align-items-center justify-content-right"
+                        style={{ height: "50px", marginTop: "2px"}}
+                        className="d-flex align-items-center justify-content-end"
                       >
                         <h3
                           className="chatbox-right"
@@ -188,7 +188,7 @@ export default function Chat() {
                 onClick={handleSubmit}
                 className="submit-button"
               >
-                Success
+                send
               </Button>{" "}
             </div>
 
