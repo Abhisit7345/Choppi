@@ -58,33 +58,34 @@ export default function MyStore() {
               .map((item) => {
                 console.log(item);
                 return (
-                  <Col key={item.id}>
-                    <Card style={{ width: "18rem", height: "18rem" }}>
+                  <div>
+                    <Card
+                      style={{ width: "12rem", height: "20rem" }}
+                      key={item.docId}
+                    >
                       <Card.Img
-                        variant="top"
                         src={item.pictureUrl}
-                        style={{ height: "8rem", objectFit: "contain" }}
+                        style={{
+                          height: "10rem",
+                          objectFit: "cover",
+                        }}
                       />
-                      <Card.Body>
+                      <Card.Body style={{ height: "9rem" }}>
                         <Card.Title>{item.name}</Card.Title>
-                        <Card.Text>{item.description}</Card.Text>
-                        <Card.Text>
-                          $ {item.price}
+                        <Card.Text
+                          style={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            maxHeight: "7rem",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {item.description}
                         </Card.Text>
-                          <Link
-                            key={item.uid}
-                            to={{
-                              pathname: "/sellItem",
-                              search: `itemId=${item.id}`,
-                            }}
-                            style={{ textDecoration: "none"}}
-                          >
-                            {" "}
-                            <Button variant="primary">Modify item</Button>
-                          </Link>
                       </Card.Body>
+                      <Button variant="primary">Modify item</Button>
                     </Card>
-                  </Col>
+                  </div>
                 );
               })
           ) : (

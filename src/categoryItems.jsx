@@ -18,31 +18,40 @@ import { Card } from "react-bootstrap";
 
 export default function CategoryItems() {
   const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  const category = params.get("category");
   const [itemList, setItemList] = useState([]);
   const [displayItem, setDisplayItem] = useState();
   const [nameList, setNameList] = useState([]);
+  let [params, setParams] = useState(new URLSearchParams(location.search))
+  let [category, setCategory] = useState(params.get("category"))
+  const [reload, setReload] = useState(false)
+
+  const updateContent = () => {
+    console.log('called')
+    setReload((prev)=>{
+      return !prev
+    })
+  }
+
+  const fetchData = async () => {
+    const q = query(
+      collection(db, "store"),
+      where("category", "==", category)
+    );
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      setItemList((prev) => {
+        const new_prev = [...prev];
+        const newData = { ...doc.data(), itemId: doc.id };
+        new_prev.push(newData);
+        addName(doc.data().uid);
+        return new_prev;
+      });
+    });
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const q = query(
-        collection(db, "store"),
-        where("category", "==", category)
-      );
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc) => {
-        setItemList((prev) => {
-          const new_prev = [...prev];
-          const newData = { ...doc.data(), itemId: doc.id }
-          new_prev.push(newData);
-          addName(doc.data().uid);
-          return new_prev;
-        });
-      });
-    };
     fetchData();
-  }, []);
+  }, [category]);
 
   async function addName(uid) {
     const q = query(collection(db, "users"), where("uid", "==", uid));
@@ -55,6 +64,14 @@ export default function CategoryItems() {
       });
     });
   }
+
+  useEffect(()=>{
+    params = new URLSearchParams(location.search);
+    setCategory(()=>{
+      return params.get("category");
+    }) 
+    console.log('param changed')
+  },[reload])
 
   useEffect(() => {
     const newList = [];
@@ -70,27 +87,35 @@ export default function CategoryItems() {
         <Navbar />
       </div>
       <div
-        className="d-flex flex-column align-items-between"
+        className="d-flex flex-column"
         style={{ minHeight: "100vh" }}
       >
         <div
           className="content flex-grow-1"
-          style={{ margin: "50px 9rem 50px 9rem " }}
+          style={{ margin: "50px 20rem"}}
         >
           {displayItem ? (
-            <div className="row">
+            <div
+              className="row"
+              style={{
+                backgroundColor: "aquamarine",
+                padding: "50px",
+                border: "green 1px solid",
+                borderRadius: "20px",
+              }}
+            >
               {displayItem.map((item, index) => (
                 <div className="col-md-3" style={{ marginBottom: "20px" }}>
-                  <Link
-                    to={{
-                      pathname: "/itemInfo",
-                      search: `itemId=${item.itemId}`,
-                    }}
-                    style={{ textDecoration: "none", color: "black" }}
+                  <Card
+                    style={{ width: "12rem", height: "20rem" }}
+                    key={item.docId}
                   >
-                    <Card
-                      style={{ width: "12rem", height: "20rem" }}
-                      key={item.docId}
+                    <Link
+                      to={{
+                        pathname: "/itemInfo",
+                        search: `itemId=${item.itemId}`,
+                      }}
+                      style={{ textDecoration: "none", color: "black" }}
                     >
                       <Card.Img
                         src={item.pictureUrl}
@@ -107,12 +132,11 @@ export default function CategoryItems() {
                             textOverflow: "ellipsis",
                             height: "3rem",
                             whiteSpace: "nowrap",
-                            backgroundColor: "rgb(177, 177, 177)",
                             borderRadius: "5px",
                             padding: "10px",
                           }}
                         >
-                          {item.description} fdsfasfsdfasf
+                          {item.description}
                         </Card.Text>
                         <Card.Text
                           style={{
@@ -125,17 +149,17 @@ export default function CategoryItems() {
                           posted by {nameList[index]}
                         </Card.Text>
                       </Card.Body>
-                    </Card>
-                  </Link>
+                    </Link>
+                  </Card>
                 </div>
               ))}
             </div>
           ) : (
-            <div></div>
+            <div style={{ textAlign : 'center' }}>No items to display</div>
           )}
         </div>
         <div>
-          <Footer />
+          <Footer onUpdateContent={updateContent} />
         </div>
       </div>
     </div>

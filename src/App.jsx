@@ -353,8 +353,8 @@ function App() {
                               <div className="item">
                                 <Link
                                   to={{
-                                    pathname: "/categoryItems",
-                                    search: "category=home",
+                                    pathname: "/itemInfo",
+                                    search: `itemId=${item.docId}`,
                                   }}
                                   style={{
                                     textDecoration: "none",
