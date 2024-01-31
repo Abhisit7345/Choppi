@@ -9,10 +9,6 @@
     background-color: white;
 }
 
-.display-search:hover {
-    background-color: rgb(185, 185, 185);
-}
-
 .search-items {
     height: 100px;
     display: flex;

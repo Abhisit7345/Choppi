@@ -270,7 +270,7 @@ function App() {
                           padding: "20px",
                           zIndex: "5",
                         }}
-                        ref = { filterOptions }
+                        ref={filterOptions}
                       >
                         <Form>
                           <Form.Check
@@ -303,10 +303,10 @@ function App() {
                       <div></div>
                     )}
                     {displaySearch.length > 0 && display ? (
-                      <div className="display-search">
-                        {displaySearch.map((item) => {
+                      <div className="display-search row">
+                        {displaySearch.map((item, index) => {
                           return (
-                            <div className="display-item">
+                            <div className={`display-item col-12`} style={{ borderBottom : '0.5px solid black', marginTop : '20px' }}>
                               <Link
                                 to={{
                                   pathname: "/iteminfo",
@@ -320,7 +320,7 @@ function App() {
                                 <div className="search-items">
                                   <img
                                     src={item.pictureUrl}
-                                    style={{ height: "100px" }}
+                                    style={{ height: "100px", width: "100px", marginBottom : '20px' }}
                                     alt=""
                                   />
                                   <div
@@ -406,10 +406,7 @@ function App() {
                 </div>
                 <div className="my-5">
                   <h4>What would you like to find?</h4>
-                  <div
-                    className="d-flex justify-content-start"
-                    style={{ height: "11rem" }}
-                  >
+                  <div className="row" >
                     <Link
                       to={{
                         pathname: "/categoryItems",
@@ -418,11 +415,12 @@ function App() {
                       style={{
                         textDecoration: "none",
                         color: "black",
+                        width: "200px",
                       }}
                     >
                       <div
                         className="mx-5 product-item"
-                        style={{ textAlign: "center" }}
+                        style={{ textAlign: "center", width: "100%" }}
                       >
                         <div>home</div>
                         <div className="my-3">
@@ -444,11 +442,12 @@ function App() {
                       style={{
                         textDecoration: "none",
                         color: "black",
+                        width: "200px",
                       }}
                     >
                       <div
                         className="mx-5 product-item"
-                        style={{ textAlign: "center" }}
+                        style={{ textAlign: "center", width: "100%" }}
                       >
                         <div>clothing</div>
                         <div className="my-3">
@@ -464,16 +463,17 @@ function App() {
                     <Link
                       to={{
                         pathname: "/categoryItems",
-                        search: "category=electronics",
+                        search: "category=clothing",
                       }}
                       style={{
                         textDecoration: "none",
                         color: "black",
+                        width: "200px",
                       }}
                     >
                       <div
                         className="mx-5 product-item"
-                        style={{ textAlign: "center" }}
+                        style={{ textAlign: "center", width: "100%" }}
                       >
                         <div>electronics</div>
                         <div className="my-3">
@@ -489,16 +489,17 @@ function App() {
                     <Link
                       to={{
                         pathname: "/categoryItems",
-                        search: "category=other",
+                        search: "category=clothing",
                       }}
                       style={{
                         textDecoration: "none",
                         color: "black",
+                        width: "200px",
                       }}
                     >
                       <div
                         className="mx-5 product-item"
-                        style={{ textAlign: "center" }}
+                        style={{ textAlign: "center", width: "100%" }}
                       >
                         <div>others</div>
                         <div className="my-3">
