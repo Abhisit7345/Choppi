@@ -105,6 +105,7 @@ export default function Chat() {
     } catch (e) {
       console.log(e);
     }
+    setInputValue("")
   }
 
   return (
@@ -120,7 +121,7 @@ export default function Chat() {
             className="content d-flex flex-column"
             style={{ minHeight: "100vh" }}
           >
-            <div className="flex-grow-1" style={{ margin: "10px"}}>
+            <div className="flex-grow-1" style={{ margin: "10px" }}>
               <div className="d-flex other-info">
                 {otherInfo ? (
                   <>
@@ -158,7 +159,7 @@ export default function Chat() {
                       </div>
                     ) : (
                       <div
-                        style={{ height: "50px", marginTop: "2px"}}
+                        style={{ height: "50px", marginTop: "2px" }}
                         className="d-flex align-items-center justify-content-end"
                       >
                         <h3
@@ -182,6 +183,7 @@ export default function Chat() {
                 placeholder="enter message"
                 ref={chatRef}
                 onChange={handleInputChange}
+                value={inputValue}
               />
               <Button
                 variant="outline-success"
