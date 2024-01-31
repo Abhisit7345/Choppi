@@ -88,11 +88,11 @@ export default function CategoryItems() {
       </div>
       <div
         className="d-flex flex-column"
-        style={{ minHeight: "100vh" }}
+        style = {{minHeight: '100vh'}}
       >
         <div
           className="content flex-grow-1"
-          style={{ margin: "50px 20rem", width: '70%'}}
+          style={{ margin: "50px 20rem"}}
         >
           {displayItem ? (
             <div
@@ -102,10 +102,12 @@ export default function CategoryItems() {
                 padding: "50px",
                 border: "green 1px solid",
                 borderRadius: "20px",
+                
+                minWidth: '18rem'
               }}
             >
               {displayItem.map((item, index) => (
-                <div className="col-md-12 col-lg-6 col-xl-4 col-xxl-3" style={{ marginBottom: "20px" }}>
+                <div className="col" style={{ marginBottom: "20px" }}>
                   <Card
                     style={{ width: "12rem", height: "20rem" }}
                     key={item.docId}

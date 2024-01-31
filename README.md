@@ -1,11 +1,20 @@
 
-# instrcution to run
+# Run
 
-npm install
-npm run dev
+1. Start the development server: npm run dev
+2. Open your browser and navigate to http://localhost:5173
 
-# known issue
+# Known Issues
 
-footer product do not work when user is on categoryItem.jsx page
-chat.jsx page shows message being sorted when a message is sent
-when chaning profile image, only some images work
+1. Footer link does not work on categoryItem.jsx page:
+   - when clicking on other product types than the current, contents of the page do not change, but only the url param
+
+2. Chat.jsx page shows message being sorted when a message is sent:
+   - Functional but is not visually pleasing
+
+3. Changing profile image issue:
+   - Need further testing on what type of image works
+
+# Test Accounts
+- Email: emailtest@gmail.com
+- Password: 123456

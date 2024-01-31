@@ -5,6 +5,7 @@ import "./css/content.css";
 import styled from "styled-components";
 import CommonStyles from "./commonStyles.jsx";
 import "./css/profile.css";
+import Footer from "./footer.jsx";
 
 import { Button } from "react-bootstrap";
 
@@ -170,6 +171,9 @@ export default function Profile() {
             <div>{currentUser.email}</div>
             <div>{displayName}</div>
           </div>
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
     </>
