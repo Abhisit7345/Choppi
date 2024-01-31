@@ -417,9 +417,10 @@ function App() {
                         color: "black",
                         width: "200px",
                       }}
+                      className="mx-2"
                     >
                       <div
-                        className="mx-5 product-item"
+                        className="product-item"
                         style={{ textAlign: "center", width: "100%" }}
                       >
                         <div>home</div>
@@ -444,9 +445,10 @@ function App() {
                         color: "black",
                         width: "200px",
                       }}
+                      className="mx-2"
                     >
                       <div
-                        className="mx-5 product-item"
+                        className="product-item"
                         style={{ textAlign: "center", width: "100%" }}
                       >
                         <div>clothing</div>
@@ -463,16 +465,17 @@ function App() {
                     <Link
                       to={{
                         pathname: "/categoryItems",
-                        search: "category=clothing",
+                        search: "category=electronics",
                       }}
                       style={{
                         textDecoration: "none",
                         color: "black",
                         width: "200px",
                       }}
+                      className="mx-2"
                     >
                       <div
-                        className="mx-5 product-item"
+                        className="product-item"
                         style={{ textAlign: "center", width: "100%" }}
                       >
                         <div>electronics</div>
@@ -489,16 +492,17 @@ function App() {
                     <Link
                       to={{
                         pathname: "/categoryItems",
-                        search: "category=clothing",
+                        search: "category=other",
                       }}
                       style={{
                         textDecoration: "none",
                         color: "black",
                         width: "200px",
                       }}
+                      className="mx-2"
                     >
                       <div
-                        className="mx-5 product-item"
+                        className="product-item"
                         style={{ textAlign: "center", width: "100%" }}
                       >
                         <div>others</div>

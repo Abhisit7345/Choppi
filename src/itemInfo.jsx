@@ -8,6 +8,7 @@ import Navbar from "./navbar";
 import CommonStyles from "./commonStyles";
 import "./css/content.css";
 import "./css/itemInfo.css";
+import Footer from "./footer";
 
 export default function ItemInfo() {
   const location = useLocation();
@@ -49,6 +50,9 @@ export default function ItemInfo() {
           ) : (
             <div>loading...</div>
           )}
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
     </>
