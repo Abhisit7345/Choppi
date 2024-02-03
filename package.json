@@ -41,5 +41,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
     "vite": "^5.0.0"
+  },
+  "engine" : {
+    "node": "v18.18.0"
   }
 }
