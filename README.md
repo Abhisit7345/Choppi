@@ -15,6 +15,11 @@
 3. Changing profile image issue:
    - Need further testing on what type of image works
 
+4. Signin with google not working when using AWS amplify
+
 # Test Accounts
 - Email: emailtest@gmail.com
+- Password: 123456
+
+- Email: emailtest2@gmail.com
 - Password: 123456
