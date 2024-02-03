@@ -17,6 +17,9 @@
 
 4. Signin with google not working when using AWS amplify
 
+# AWS Amplify
+https://main.d8fzz4y1zf5k9.amplifyapp.com 
+
 # Test Accounts
 - Email: emailtest@gmail.com
 - Password: 123456
